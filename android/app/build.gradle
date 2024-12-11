@@ -1,0 +1,45 @@
+plugins {
+    id "com.android.application"
+    id 'com.google.gms.google-services' // Pastikan plugin ini ada jika menggunakan Firebase atau layanan Google
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.education_apps"
+    compileSdk = 34 // Menetapkan ke 34 sesuai dengan SDK terbaru yang digunakan
+
+    ndkVersion = flutter.ndkVersion // Gunakan ini jika proyek membutuhkan NDK
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId = "com.example.education_apps"
+        minSdk = 23 // Minimal SDK, sesuaikan jika aplikasi Anda membutuhkan versi yang lebih tinggi
+        targetSdk = 34 // Target SDK untuk menyesuaikan dengan versi Android terbaru
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug // Pastikan Anda sudah mengonfigurasi signingConfigs jika perlu
+        }
+    }
+}
+
+dependencies {
+
+    // Tambahkan dependensi lainnya sesuai dengan kebutuhan proyek Anda
+}
+
+flutter {
+    source = "../.." // Menetapkan folder sumber Flutter
+}
